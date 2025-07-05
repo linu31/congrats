@@ -1,0 +1,60 @@
+canvas {
+  background-color:#312;
+}
+body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #1a1a1a;
+            overflow: hidden;
+        }
+
+        .back-button {
+            background: #ff4d6d;
+            color: white;
+            font-family: 'Dancing Script', cursive;
+            font-size: 40px;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 0 15px #ff4d6d, 0 0 30px #ff007f;
+            text-shadow: 0 0 10px #ff007f;
+            animation: pulse 1.5s infinite, glow 2s infinite alternate;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* Hover Effect */
+        .back-button:hover {
+            background: #ff007f;
+            box-shadow: 0 0 20px #ff007f, 0 0 40px #ff66b2;
+            transform: scale(1.1);
+        }
+
+        /* Gentle Pulse Animation */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Glowing Effect */
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 15px #ff4d6d, 0 0 30px #ff007f;
+            }
+            100% {
+                box-shadow: 0 0 20px #ff99cc, 0 0 40px #ff66b2;
+            }
+        }
+.back-button-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}

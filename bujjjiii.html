@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>For Linu 💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #1a1a1a;
+            overflow: hidden;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .cursive-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 100px;
+            color: #ff4d6d;
+            text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff007f, 0 0 30px #ff007f;
+            animation: glow 2s infinite alternate, pulse 1.5s infinite;
+            position: relative;
+        }
+
+        /* Glowing Effect */
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff007f, 0 0 30px #ff007f;
+            }
+            100% {
+                text-shadow: 0 0 15px #ff99cc, 0 0 25px #ff66b2, 0 0 40px #ff66b2;
+            }
+        }
+
+        /* Gentle Pulse Effect */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Floating Hearts */
+        .heart {
+            position: absolute;
+            color: #ff007f;
+            font-size: 20px;
+            animation: float 3s infinite ease-in-out;
+            opacity: 0.8;
+        }
+
+        /* Heart Floating Animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(0.8);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-30px) scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-60px) scale(0.8);
+                opacity: 0;
+            }
+        }
+
+        /* Heart Button Container */
+        .heart-buttons {
+            display: flex;
+            gap: 40px;
+        }
+
+        /* Heart-Shaped Buttons (Upright, Smaller, and Spaced) */
+        .heart-button {
+            display: flex;
+            align-items: center;
+            justify-content:bottom;
+            width: 80px;
+            height: 70px;
+            background: #ff4d6d;
+            color: white;
+            font-family: 'Dancing Script', cursive;
+            font-size: 14px;
+            text-shadow: 0 0 10px #ff007f;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            position: relative;
+            transition: transform 0.2s ease;
+            animation: glow 2s infinite alternate;
+            box-shadow: 0 0 15px #ff4d6d, 0 0 30px #ff007f;
+        }
+
+        /* Heart Shape Upright */
+        .heart-button::before,
+        .heart-button::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 80px;
+            background: #ff4d6d;
+            border-radius: 50px 50px 0 0;
+            top: -40px;
+        }
+
+        .heart-button::before {
+            left: 0;
+            transform: rotate(-45deg);
+        }
+
+        .heart-button::after {
+            right: 0;
+            transform: rotate(45deg);
+        }
+
+        /* Hover Effect */
+        .heart-button:hover {
+            background: #ff007f;
+            box-shadow: 0 0 20px #ff007f, 0 0 40px #ff66b2;
+            transform: scale(1.1);
+        }
+	/* Text Hidden by Default */
+.heart-button span {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-size: 14px;
+    text-shadow: 0 0 10px #ff007f;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+/* Show Text on Hover */
+.heart-button:hover span {
+    visibility: visible;
+    opacity: 1;
+}
+/* Surprise Note */
+    .surprise-note {
+        color: #ff4d6d;
+        font-family: 'Dancing Script', cursive;
+        font-size: 20px;
+        text-align: center;
+        margin-top: 20px;
+        text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff007f;
+        animation: glow 2s infinite alternate;
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="cursive-text">❤️Induuu❤️</div>
+    <div class="surprise-note">
+    <p>1) Click on the 1st heart for a surprise..</p>
+    <p>2) Click on the 2nd heart for another surprise..</p>
+    </div>
+    <!-- Heart Buttons -->
+    <div class="heart-buttons">
+        <button class="heart-button" onclick="window.location.href='firstone.html'">1
+        </button>
+        <button class="heart-button" onclick="window.location.href='confession.html'">2
+        </button>
+    </div>
+
+    <script>
+        // Generate Floating Hearts ❤️
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️❤️';
+            document.body.appendChild(heart);
+
+            // Randomize heart position and animation
+            heart.style.left = `${Math.random() * 100}vw`;
+            heart.style.animationDuration = `${2 + Math.random() * 3}s`;
+
+            // Remove heart after animation
+            setTimeout(() => heart.remove(), 3000);
+        }
+
+        // Create hearts every 500ms
+        setInterval(createHeart, 500);
+    </script>
+</body>
+</html>
